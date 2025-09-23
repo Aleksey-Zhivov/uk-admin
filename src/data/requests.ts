@@ -1,5 +1,3 @@
-import { EStatus } from "src/types/status.type";
-
 export const REQUESTS = [
   {
     id: "Z-1203",

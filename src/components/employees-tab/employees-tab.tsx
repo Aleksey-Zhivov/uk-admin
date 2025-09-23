@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { EMPLOYEES } from "src/data/employes.constant";
 import Td from "../ui/td/td";
 import Th from "../ui/th/th";
+import { EMPLOYEES } from "@/data/employees";
 
 const EmployeesTab = () => {
   const [q, setQ] = useState("");

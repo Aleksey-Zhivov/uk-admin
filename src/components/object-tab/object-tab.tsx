@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { HOUSES } from "src/data/objects.constant";
+import { HOUSES } from "@/data/objects";
 import Badge from "../ui/badge/badge";
 import Metric from "../ui/metric/metric";
 

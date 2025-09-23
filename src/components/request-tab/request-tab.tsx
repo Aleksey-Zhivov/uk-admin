@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { REQUESTS } from "src/data/requests.constant";
+import { REQUESTS } from "@/data/requests";
 import Th from "../ui/th/th";
 import Badge from "../ui/badge/badge";
 import Td from "../ui/td/td";

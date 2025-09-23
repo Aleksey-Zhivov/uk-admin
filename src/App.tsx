@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import type { TabKey } from "./types/tabs.type";
-import { HOUSES } from "./data/objects.constant";
-import { TABS } from "./data/tabs.constant";
+import type { TabKey } from "./types/tabs";
+import { HOUSES } from "./data/objects";
+import { TABS } from "./data/tabs";
 import ObjectsTab from "./components/object-tab/object-tab";
 import RequestsTab from "./components/request-tab/request-tab";
 import EmployeesTab from "./components/employees-tab/employees-tab";
@@ -13,7 +13,10 @@ export default function App() {
   const [query, setQuery] = useState("");
   const [selectedHouse, setSelectedHouse] = useState<string | null>(null);
   const [reqStatus, setReqStatus] = useState<string>("");
-  const activeHouse = useMemo(() => HOUSES.find(h => h.id === selectedHouse) || null, [selectedHouse]);
+  const activeHouse = useMemo(
+    () => HOUSES.find((h) => h.id === selectedHouse) || null,
+    [selectedHouse]
+  );
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -22,10 +25,12 @@ export default function App() {
           <div className="flex h-14 items-center justify-between gap-4">
             <div className="flex items-center gap-3">
               <div className="size-8 rounded-xl bg-blue-600" />
-              <span className="hidden text-sm font-semibold text-slate-600 sm:inline">УК: админ-панель</span>
+              <span className="hidden text-sm font-semibold text-slate-600 sm:inline">
+                УК: админ-панель
+              </span>
             </div>
             <nav className="hidden items-center gap-1 md:flex">
-              {TABS.map(t => (
+              {TABS.map((t) => (
                 <button
                   key={t.key}
                   onClick={() => setTab(t.key)}
@@ -55,13 +60,15 @@ export default function App() {
         <div className="md:hidden">
           <div className="mx-auto max-w-7xl px-3 pb-2 sm:px-6 lg:px-8">
             <div className="flex gap-2 overflow-x-auto pb-1">
-              {TABS.map(t => (
+              {TABS.map((t) => (
                 <button
                   key={t.key}
                   onClick={() => setTab(t.key)}
                   className={
                     "whitespace-nowrap rounded-lg px-3 py-1.5 text-sm " +
-                    (tab === t.key ? "bg-slate-900 text-white" : "bg-white text-slate-700 border border-slate-200")
+                    (tab === t.key
+                      ? "bg-slate-900 text-white"
+                      : "bg-white text-slate-700 border border-slate-200")
                   }
                 >
                   {t.label}
@@ -74,7 +81,12 @@ export default function App() {
 
       <main className="mx-auto max-w-7xl px-3 py-4 sm:px-6 lg:px-8">
         {tab === "objects" && (
-          <ObjectsTab query={query} onOpenHouse={setSelectedHouse} activeHouse={activeHouse} onCloseDetail={() => setSelectedHouse(null)} />
+          <ObjectsTab
+            query={query}
+            onOpenHouse={setSelectedHouse}
+            activeHouse={activeHouse}
+            onCloseDetail={() => setSelectedHouse(null)}
+          />
         )}
         {tab === "requests" && (
           <RequestsTab reqStatus={reqStatus} setReqStatus={setReqStatus} />

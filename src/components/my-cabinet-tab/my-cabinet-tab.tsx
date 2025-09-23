@@ -1,8 +1,8 @@
-import { REQUESTS } from "src/data/requests.constant";
+import { REQUESTS } from "@/data/requests";
 import Badge from "../ui/badge/badge";
 import Td from "../ui/td/td";
 import Th from "../ui/th/th";
-import { EStatus } from "src/types/status.type";
+import { EStatus } from "@/types/status";
 
 const getStatusColor = (status: string) => {
   switch (status) {
