@@ -1,0 +1,32 @@
+export const HOUSES = [
+  {
+    id: "h1",
+    name: "ЖК Сосновый бор, корп. 3",
+    address: "ул. Лесная, 12",
+    buildings: 4,
+    metersOk: 98,
+    metersTotal: 103,
+    openTickets: 6,
+    collectedPercent: 87,
+  },
+  {
+    id: "h2",
+    name: "Дом на Речном, д. 18",
+    address: "пр. Речной, 18",
+    buildings: 1,
+    metersOk: 45,
+    metersTotal: 48,
+    openTickets: 2,
+    collectedPercent: 93,
+  },
+  {
+    id: "h3",
+    name: "ЖК Северный Вид",
+    address: "б-р Арктики, 4к2",
+    buildings: 7,
+    metersOk: 310,
+    metersTotal: 327,
+    openTickets: 14,
+    collectedPercent: 72,
+  },
+];
